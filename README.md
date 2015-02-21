@@ -1,2 +1,2 @@
-# SilhouttesAndOutlilnes
+# SilhouttesAndOutlilnesAndHatchingOhMy
 Graphical lighting techniques
