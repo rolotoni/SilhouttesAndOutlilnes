@@ -61,9 +61,9 @@ void ReshapeWindow(int w, int h)
     glutIdleFunc(&ReDraw);
     scene.sBuffer.CreateFBO(scene.width, scene.height, 3);
     scene.gBuffer.CreateFBO(scene.width, scene.height, 4);
-	scene.ISM.CreateFBO(NUM_ISM*ISM_RES, NUM_ISM*ISM_RES, 1);
-	scene.fBuffer.CreateFBO(scene.width, scene.height, 3);
-	scene.hBuffer.CreateFBO(scene.width, scene.height, 1);
+  scene.ISM.CreateFBO(NUM_ISM*ISM_RES, NUM_ISM*ISM_RES, 1);
+  scene.fBuffer.CreateFBO(scene.width, scene.height, 3);
+  scene.hBuffer.CreateFBO(scene.width, scene.height, 1);
 
 }
 

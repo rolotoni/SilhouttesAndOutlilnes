@@ -45,26 +45,26 @@ void FBO::CreateFBO(const int w, const int h, const int NumBuffers)
     glGenTextures(nbuffers, textures);
 
     // Repeat this block for each render target.
-	for(unsigned i=0; i < nbuffers; ++i)
-	{
+  for(unsigned i=0; i < nbuffers; ++i)
+  {
       // Create texture and attach to the FBO's color 0 attachment
       glBindTexture(GL_TEXTURE_2D, textures[i]);
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA32F_ARB, width, height,
                    0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, 0);
-	  
+    
       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);        
-	  
+    
       // Attach the ith render target to GL_COLOR_ATTACHMENT0_EXT+i
       glFramebufferTexture2DEXT(GL_FRAMEBUFFER_EXT,
                                 GL_COLOR_ATTACHMENT0_EXT+i,
                                 GL_TEXTURE_2D, textures[i], 0);
-	  
+    
       buffers[i] = GL_COLOR_ATTACHMENT0_EXT+i;
-	}
+  }
     // End of repeatable block
 
     // Check for completeness/correctness
